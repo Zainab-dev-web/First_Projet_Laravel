@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="/css/app.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -97,30 +97,27 @@
                 <table style="border:1px solid black;
                 padding:10px;">
                 <hr>
-                <br><br>
-                     @foreach ($listLegumes as $item)
-                    <tr>
-                      <td>ID</td>
-                      <td>{{$item->id}}</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Nom</td>
-                      <td>{{$item->name}}</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Quantité</td>
-                      <td>{{$item->quantite}}</td>
+                
+                <tr class="bg-dark text-white">
+                    <td>ID</td>
+                    <td>Nom</td>
+                    <td>Quantité</td>
                     
-                    </tr>
+                  </tr>
+                  @foreach ($listLegumes as $item)
+                  <tr>
+                    <td class="bg-danger">{{$item->id}}</td>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->quantite}} piéce(s)</td>
                     
-                     @endforeach 
-                    
-                  </table>
+                  </tr>
+                  @endforeach 
+                </table>
+                <button class="btn btn-info text-white retour "><a href="/">Retour à l'accueil</a></button>
             </div>
         </div>
     </body>
+    <script src="/js/app.js"></script>
 </html>
 
 {{-- {{$legumes->name . " " . $legumes->quantite}} --}}

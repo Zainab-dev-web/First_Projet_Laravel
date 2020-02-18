@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+<link rel="stylesheet" href="/css/app.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -93,31 +93,32 @@
                 </div>
                
                 <table style="border:1px solid black;
-                padding:10px;">
+                padding:10px; ">
                 <hr>
-                <br><br>
-                    @foreach ($listFruits as $item)
-                   <tr>
+                
+                    
+                   <tr class="bg-dark text-white">
                      <td>ID</td>
-                     <td>{{$item->id}}</td>
-                     
-                   </tr>
-                   <tr>
                      <td>Nom</td>
-                     <td>{{$item->name}}</td>
+                     <td>Quantité</td>
                      
                    </tr>
+                   @foreach ($listFruits as $item)
                    <tr>
-                     <td>Quantité</td>
+                     <td class="bg-warning">{{$item->id}}</td>
+                     <td>{{$item->name}}</td>
                      <td>{{$item->quantite}} piéce(s)</td>
                      
                    </tr>
                    
-                    @endforeach 
+                   @endforeach 
                    
-                 </table>
+                </table>
+                <button class="btn btn-info text-white retour "><a href="/">Retour à l'accueil</a></button>
             </div>
         </div>
+
+        <script src="/js/app.js"></script>
     </body>
 </html>
 
